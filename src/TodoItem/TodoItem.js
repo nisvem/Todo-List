@@ -7,8 +7,8 @@ const ToDoItem = props => {
   return (
       <div className="todo-list__item">
         <Checkbox 
-          defaultChecked={props.done} 
-          onChange={props.handleChange}
+          checked={props.done} 
+          onClick={props.handleChange}
         />
         <p>{props.description}</p>
         <IconButton className="btn-delete">
