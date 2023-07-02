@@ -79,8 +79,8 @@ class App extends Component {
             />
             <br/>
             <p className='todo-summ-tasks'>Total: {this.state.data.length}</p>
-            <p className='todo-summ-tasks'>Completed: {this.state.data.filter(item => item.done === true).length}</p>
-            <p className='todo-summ-tasks'>Uncompleted: {this.state.data.filter(item => item.done === false).length}</p>
+            <p className='todo-summ-tasks'>Completed: {this.state.data.filter(item => item.done).length}</p>
+            <p className='todo-summ-tasks'>Uncompleted: {this.state.data.filter(item => !item.done).length}</p>
 
         </div>
       </div>
