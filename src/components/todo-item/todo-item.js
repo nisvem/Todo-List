@@ -9,11 +9,12 @@ const ToDoItem = ({done, description, onChecked, onDelete}) => {
   mainClassName += done ? ' todo-list__item--done' : '';
 
   return (
-      <div className={mainClassName} onClick={onChecked}>
+      <div className={mainClassName}>
         <Checkbox 
+          onClick={onChecked}
           checked={done} 
         />
-        <p>{description}</p>
+        <p onClick={onChecked}>{description}</p>
         <IconButton className='btn-delete' onClick={onDelete}>
           <DeleteIcon/>
         </IconButton>

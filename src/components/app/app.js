@@ -1,6 +1,5 @@
 import { Component } from 'react';
 
-import tasksData from '../../data.js';
 import ToDoList from '../todo-list/todo-list';
 import ToDoItemAdd from '../todo-item-add/todo-item-add'
 
@@ -10,7 +9,7 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      data: tasksData
+      data: []
     }
   }
 
@@ -23,17 +22,15 @@ class App extends Component {
   }
 
   onCheckedItem = (id) => {
-    const index = this.state.data.findIndex( element => element.id === id);
-    const checked = this.state.data[index].done;
-
-    this.setState( state => {
-      state.data.map((item) => {
-        if(item.id === id) {
-          item.done = !checked;
-        }
-        return item;
-      });
-      return state;
+    this.setState( ({data}) => {
+      return {
+        data: data.map((item) => {
+          if(item.id === id) {
+            return {...item, done: !item.done}
+          }
+          return item
+        })
+      };
     });
   }
 
@@ -41,11 +38,9 @@ class App extends Component {
     let newId = 0;
 
     this.state.data.forEach(item => {
-      console.log(item.id);
       if(item.id >= newId) {
         newId = item.id + 1;
       }
-      console.log(newId);
     });
 
     const newData = {

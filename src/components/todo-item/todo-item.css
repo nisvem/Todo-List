@@ -1,5 +1,4 @@
 .todo-list__item {
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,5 +9,10 @@
 }
 
 .todo-list__item--done p {
-  text-decoration: line-through;  
+  text-decoration: line-through; 
+}
+
+.todo-list__item p {
+  cursor: pointer; 
+  width: 100%;
 }
