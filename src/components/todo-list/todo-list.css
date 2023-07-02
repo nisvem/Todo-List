@@ -1,0 +1,16 @@
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  margin-top: 30px;
+}
+
+.todo-list__item:last-child {
+  border-bottom: none;
+}
+
+.todo-list__item .btn-delete {
+  margin-left: auto;
+}

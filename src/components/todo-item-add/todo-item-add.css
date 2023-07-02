@@ -1,0 +1,11 @@
+.add-todo-block {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.add-todo-input {
+  flex: 1;
+}
